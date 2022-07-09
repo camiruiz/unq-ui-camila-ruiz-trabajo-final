@@ -1,9 +1,19 @@
 .titleStyle {
     width: 100%;
-    height: 100x;
+    height: 500x;
     background-color: black ;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border-radius: 80px;
+    max-width: 50%;
 }
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+    
