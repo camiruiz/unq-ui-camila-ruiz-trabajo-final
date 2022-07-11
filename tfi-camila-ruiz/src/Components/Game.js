@@ -25,19 +25,31 @@ const options = [ {
 const Game = () => {
 
     const [optionPlayer, setOptionPlayer] = useState("");
-    
+    const [optionBot, setOptionBot] = useState("");
+
     const chooseOption = (event) => {
         setOptionPlayer(event.target.textContent);
+        chooseOptionBot();
      }
+
+    const chooseOptionBot = () => {
+        const option = options[Math.floor(Math.random() * options.length)].id;
+
+        setOptionBot(option);
+    }
 
     return( 
         
         <div className='App'>
             <main>
-                <section>
+            <section>
                 <div className="player">Player</div>
                 <div className="option">{optionPlayer}</div>
-                </section>
+            </section>
+            <section>
+                <div className="player">Bot</div>
+                <div className="option">{optionBot}</div>
+            </section>
             </main>
         
              <div className="gameStyle">
