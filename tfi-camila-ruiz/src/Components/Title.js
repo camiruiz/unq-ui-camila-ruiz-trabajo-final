@@ -7,7 +7,7 @@ const Title = () => {
         <div className='title-container'>
 
              <div className='titleStyle'>
-                <h1> Rock, Hand, Scissors, Lizard o Spock</h1>
+                <h1> Rock, Paper, Scissors, Lizard o Spock</h1>
             </div>
         </div>
     )

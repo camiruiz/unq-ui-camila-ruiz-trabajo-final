@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import '../Styles/Game.css';
+import '../Styles/Player.css';
 import Option from './Option';
-  
+import {useNavigate} from 'react-router-dom';
 
 
 const options = [ {
         id: "rock",
-        defeatedBy: ["hand", "spock"],
+        defeatedBy: ["paper", "spock"],
         image: "/images/rock.png"
     },
     {
-        id: "hand",
+        id: "paper",
         defeatedBy: ["scissors", "lizard"],
-        image: "/images/hand.png"
+        image: "/images/paper.png"
     },
     {
         id: "scissors",
@@ -27,7 +28,7 @@ const options = [ {
     },
     {
         id: "spock",
-        defeatedBy: ["lizard", "hand"],
+        defeatedBy: ["lizard", "paper"],
         image: "/images/spock.png"
     }
 ]
@@ -41,6 +42,9 @@ const Game = () => {
     const [scoreBot, setScoreBot] = useState(0);
     const [winner, setWinner] = useState("");
 
+    const navigate = useNavigate()
+    const goToHome = () => navigate('/')
+ 
     useEffect(()=>{
         checkScore()
     },[optionBot])
@@ -76,28 +80,29 @@ const Game = () => {
     }
 
     return( 
-        
-        <div className='App'>
-            {winner}
-            {scorePlayer}
-            {scoreBot}
-            <main>
-            <section>
-                <div className="player">Player</div>
-                <div className="option">{optionPlayer?.id}</div>
-            </section>
-            <section>
-                <div className="player">Bot</div>
-                <div className="option">{optionBot?.id}</div>
-            </section>
-            </main>
-        
+     <>
+           <button type='button' onClick={goToHome}> Go to home </button>
+
+            <div className='scorePlayer'>
+                {winner}
+                {scorePlayer}
+                {scoreBot}
+            </div>
+            <div className='player-container'>
+                <div className='player-title'>Player</div>
+                <div className='option'>{optionPlayer?.id}</div>
+            </div>
+            <div className='bot-container'>
+
+                <div className='bot-title'>Bot</div>
+                <div className='option'>{optionBot?.id}</div>
+            </div>
              <div className="gameStyle">
                 {
                 options.map((option, index) => <Option key={index} choose={chooseOption} value={option} />)
                }
             </div>
-        </div>
+        </>
     )
 }
 

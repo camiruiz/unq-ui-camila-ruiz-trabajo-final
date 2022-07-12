@@ -1,0 +1,33 @@
+.scorePlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.player-title {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+     flex-direction: column;
+}
+
+.bot-title {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+     flex-direction: column;
+
+}
+
+.player-container {
+    display: flex;
+    flex-direction: row;
+ vertical-align: center;    
+   }
+
+.bot-container {
+    display: flex;
+    flex-direction: row;
+    vertical-align: center;    
+   }

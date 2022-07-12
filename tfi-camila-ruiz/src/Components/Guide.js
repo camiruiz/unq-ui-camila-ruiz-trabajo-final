@@ -7,17 +7,15 @@ import {useNavigate} from 'react-router-dom';
 const Guide = () => {
     const navigate = useNavigate()
     const goToPlay = () => navigate('/Game')
-    const goToHowToPlay = () => navigate('/')
+    const goToHowToPlay = () => navigate('/Rules')
 
     return(
         
-        <div className='title-container'>
-            <div className='titleStyle'>
+            <div className='title-container'>
              <button type='button' onClick={goToPlay}> Play </button>
 
              <button type='button' onClick={goToHowToPlay}> How to play </button>
             </div> 
-        </div>
 
     )
 }

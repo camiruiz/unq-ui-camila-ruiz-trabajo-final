@@ -1,0 +1,6 @@
+.option {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding-left: 200px;
+}
