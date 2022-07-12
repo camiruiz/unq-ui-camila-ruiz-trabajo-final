@@ -35,21 +35,20 @@ Ruta completa: https://github.com/leandrojdl/unq-ui-leandro-dilorenzo-trabajo-fi
 Requerimientos Funcionales Mínimos
 1-Detallamos la funcionalidad mínima que se espera que tenga el juego, pero ustedes tienen la libertad de agregarle mejoras siempre y cuando se respete el espíritu del juego.
 
-2-Poder jugar una partida contra la computadora
-3-Poder elegir (de alguna forma) piedra, papel, tijera, lagarto o Spock
-4-Mostrar (de alguna forma) quién ganó la partida
-5-Mostrar (de alguna forma) qué eligió la computadora luego de terminada la partida
-6-La elección de la computadora tiene que estar randomizada
-7-No vale dejar un valor fijo hardcodeado
-8-Tampoco vale "mirar" la elección del jugador para elegir la jugada
-0-Que el código cumpla con los estándares mínimos que planteamos a lo largo de la materia
+2-Poder jugar una partida contra la computadora (listo)
+3-Poder elegir (de alguna forma) piedra, papel, tijera, lagarto o Spock (listo)
+4-Mostrar (de alguna forma) quién ganó la partida (listo)
+5-Mostrar (de alguna forma) qué eligió la computadora luego de terminada la partida (listo)
+6-La elección de la computadora tiene que estar randomizada (listo)
+7-No vale dejar un valor fijo hardcodeado (listo)
+8-Tampoco vale "mirar" la elección del jugador para elegir la jugada (listo)
+0-Que el código cumpla con los estándares mínimos que planteamos a lo largo de la materia (listo)
 
 
 Extras
 No hace falta que sean todos, cada extra aporta.
 
-Interfaz Responsive
-1-Posibilidad de jugar más de una partida
-2-Mantener un contador de victorias de cada participante en la misma sesión
-3-Posibilidad de jugar entre 2 humanos (de forma local)
-4-Manteniendo el anonimato de las elecciones de cada jugador
+0-Interfaz Responsive
+1-Posibilidad de jugar más de una partida(listo)
+2-Mantener un contador de victorias de cada participante en la misma sesión(listo)
+3-Posibilidad de jugar entre 2 humanos (de forma local) manteniendo el anonimato de las elecciones de cada jugador

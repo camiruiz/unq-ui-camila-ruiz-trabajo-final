@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../Styles/Game.css';
 import Option from './Option';
-import { FaHandRock } from 'react-icons/fa';
-import Score from './Score'
- 
+  
 
 
 const options = [ {
@@ -34,9 +32,14 @@ const Game = () => {
 
     const [optionPlayer, setOptionPlayer] = useState();
     const [optionBot, setOptionBot] = useState();
-    const [score, setScore] = useState(0);
+    const [scorePlayer, setScorePlayer] = useState(0);
+    const [scoreBot, setScoreBot] = useState(0);
     const [winner, setWinner] = useState("");
 
+    useEffect(()=>{
+        checkScore()
+    },[optionBot])
+ 
 
     const chooseOption = (event) => {
         const option = options.find(o => o.id === event.target.textContent);
@@ -51,12 +54,30 @@ const Game = () => {
         setOptionBot(option);
     }
 
+    const checkScore = () => {
+        if (optionPlayer === optionBot) {
+            setWinner('Draw')
+        } 
+        
+        else if (optionPlayer.defeatedBy.includes(optionBot.id)) {
+            setWinner('Bot Wins')
+            setScoreBot(scoreBot+1)
+            
+        }
+        
+        else if (optionBot.defeatedBy.includes(optionPlayer.id)){ 
+            setWinner('Player Wins')
+            setScorePlayer(scorePlayer+1)
+        }
+    }
 
     return( 
         
         <div className='App'>
-            <Score optionBot={optionBot} optionPlayer={optionPlayer}/>
-             <main>
+            {winner}
+            {scorePlayer}
+            {scoreBot}
+            <main>
             <section>
                 <div className="player">Player</div>
                 <div className="option">{optionPlayer?.id}</div>
@@ -69,7 +90,7 @@ const Game = () => {
         
              <div className="gameStyle">
                 {
-                options.map((option) => <Option choose={chooseOption} value={option} />)
+                options.map((option, index) => <Option key={index} choose={chooseOption} value={option} />)
                }
             </div>
         </div>
