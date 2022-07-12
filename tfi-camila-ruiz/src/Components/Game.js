@@ -5,25 +5,30 @@ import Option from './Option';
 
 
 const options = [ {
-        id: "piedra",
-        defeatedBy: ["papel", "spock"]
+        id: "rock",
+        defeatedBy: ["hand", "spock"],
+        image: "/images/rock.png"
     },
     {
-        id: "papel",
-        defeatedBy: ["tijera", "lagarto"]
+        id: "hand",
+        defeatedBy: ["scissors", "lizard"],
+        image: "/images/hand.png"
     },
     {
-        id: "tijera",
-        defeatedBy: ["spock","piedra"]
+        id: "scissors",
+        defeatedBy: ["spock","rock"],
+        image: "/images/scissors.png"
 
     },
         {
-        id: "lagarto",
-        defeatedBy: ["tijera", "piedra"]
+        id: "lizard",
+        defeatedBy: ["scissors", "rock"],
+        image: "/images/lizard.png"
     },
     {
         id: "spock",
-        defeatedBy: ["lagarto", "papel"]
+        defeatedBy: ["lizard", "hand"],
+        image: "/images/spock.png"
     }
 ]
 
@@ -41,9 +46,8 @@ const Game = () => {
     },[optionBot])
  
 
-    const chooseOption = (event) => {
-        const option = options.find(o => o.id === event.target.textContent);
-        setOptionPlayer(option);
+    const chooseOption = (option) => {
+         setOptionPlayer(option);
         chooseOptionBot();
         
      }

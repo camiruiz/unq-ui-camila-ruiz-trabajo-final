@@ -2,10 +2,10 @@ import React from "react";
 
 const Option = (props) => {
     return (
-    <div className="option" onClick={props.choose} >
-        {props.value.id}
-    </div>
+        <div className="image">
+        <img src={props.value.image} onClick={()=>props.choose(props.value)}/>
+        </div>
     )
-}
+}  
 
 export default Option;
