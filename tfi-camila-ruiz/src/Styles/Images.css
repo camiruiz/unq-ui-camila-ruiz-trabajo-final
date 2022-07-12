@@ -2,3 +2,19 @@
     text-align: center
 }
 
+.imageGif {
+    align-content: center;
+    background-color: rgb(252, 245, 245);
+    width: 27%;
+    height: 46%;
+    margin-top: 10px;
+    border: 2px solid black;
+    margin: auto;
+    display:block
+}
+
+.imageContainer {
+    height: auto;
+    width: auto;
+    transform: scale(0.7, 0.7);
+}

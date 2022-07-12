@@ -1,11 +1,25 @@
 .gameStyle {
     background-color: black;
     width: 100%;
-    height: 90%;
+    height: 40%;
     margin-top: 10px;
     border: 2px solid black;
+     
     
+}
+
+.gameOptions{
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 140px;
+    padding-top: 25px;
+}
+
+.gameOption{
     
+    padding: 10px;
 }
 
 

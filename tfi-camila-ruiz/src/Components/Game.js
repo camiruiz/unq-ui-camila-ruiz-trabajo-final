@@ -41,7 +41,7 @@ const Game = () => {
     const [scorePlayer, setScorePlayer] = useState(0);
     const [scoreBot, setScoreBot] = useState(0);
     const [winner, setWinner] = useState("");
-
+    
     const navigate = useNavigate()
     const goToHome = () => navigate('/')
  
@@ -49,6 +49,11 @@ const Game = () => {
         checkScore()
     },[optionBot])
  
+    const resetScore = (scoreBot, scorePlayer) => {
+        setScorePlayer(scorePlayer=0)
+        setScoreBot(scoreBot=0)
+    }
+
 
     const chooseOption = (option) => {
          setOptionPlayer(option);
@@ -80,8 +85,11 @@ const Game = () => {
     }
 
     return( 
-     <>
+     <div className='GameContainer'>
+
            <button type='button' onClick={goToHome}> Go to home </button>
+           <button type='button' onClick={resetScore}> Reset Score </button>
+
 
             <div className='scorePlayer'>
                 {winner}
@@ -97,12 +105,15 @@ const Game = () => {
                 <div className='bot-title'>Bot</div>
                 <div className='option'>{optionBot?.id}</div>
             </div>
+            
              <div className="gameStyle">
+                <div className='gameOptions'>
                 {
                 options.map((option, index) => <Option key={index} choose={chooseOption} value={option} />)
                }
+               </div>
             </div>
-        </>
+        </div>
     )
 }
 

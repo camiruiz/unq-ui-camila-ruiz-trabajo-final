@@ -8,7 +8,7 @@ const Rules = () => {
     const goToHome = () => navigate('/')
  
     return (
-        <>
+        
         <div className='GameContainer'>
             
             <button type='button' onClick={goToHome}> Go to home </button>
@@ -18,8 +18,17 @@ const Rules = () => {
                 <h1> How to play "Rock, Hand, Scissors, Lizard o Spock"?</h1>
             </div>
             </div>
+            <div className='imageContainer'>
+            <div className= 'image'>
+                <img src={"/images/simple.gif"}/>
+            </div>
+            </div>   
+                <div className= 'imageGif'>
+                <img src={"/images/rules.gif"}/>
+            </div>
+
         </div>
-        </>
+         
 
     )
 }
