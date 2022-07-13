@@ -18,7 +18,6 @@ function App() {
                  <Route exact path='/Rules' element={<Rules/>} />
                 </Routes>
         </BrowserRouter>
-           
     )
  }
 

@@ -16,8 +16,8 @@ const Rules = () => {
             <div className="content-container">
 
                 <div className="button-container d-grid gap-2">
-                    <Button size="lg" variant="danger" onClick={goToHome}> Go to home </Button>
-                    <Button size="lg" variant="danger" onClick={goToPlay}> Play Now </Button>
+                    <Button size="lg" variant="outline-dark" onClick={goToHome}> GO TO HOME </Button>
+                    <Button size="lg" variant="outline-dark" onClick={goToPlay}> PLAY NOW </Button>
                 </div>
                 <div className="home-container">
 
@@ -27,11 +27,11 @@ const Rules = () => {
                 </div>
                 <div className="image-container">
                     <div className="image">
-                        <img alt="gif" src={"/images/simple.gif"} />
+                        <img alt="gif" src={"/images/simple.gif"} className="image-circle"/>
                     </div>
                 </div>
                 <div className="image-gif">
-                    <img alt="gif" src={"/images/rules.gif"} />
+                    <img alt="gif" src={"/images/rules.gif"}  />
                 </div>
 
             </div>

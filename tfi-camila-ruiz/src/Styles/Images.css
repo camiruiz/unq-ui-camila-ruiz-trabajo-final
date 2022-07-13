@@ -1,7 +1,7 @@
 .image {
     text-align: center;
     padding: 2rem 0 2rem 0;
-}
+ }
 
 .image-gif {
     align-content: center;
@@ -11,11 +11,15 @@
     margin-top: 10px;
     border: 2px solid black;
     margin: auto;
-    display:block
+    display:block;
 }
 
 .image-container {
     height: auto;
     width: auto;
     transform: scale(0.9, 0.9);
+}
+
+.image-circle {
+    border-radius: 10%;
 }

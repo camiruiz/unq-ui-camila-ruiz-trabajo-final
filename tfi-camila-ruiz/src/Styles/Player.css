@@ -1,0 +1,31 @@
+.game-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.players-score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 1rem 3rem;
+}
+
+.bot-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 1rem 3rem;
+}

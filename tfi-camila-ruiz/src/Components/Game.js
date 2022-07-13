@@ -52,7 +52,7 @@ const Game = () => {
 
     useEffect(() => {
         checkScore()
-    }, [optionBot])
+    }, [round])
 
     const resetGame = () => {
         setRound(1)
@@ -84,64 +84,78 @@ const Game = () => {
 
     const checkScore = () => {
         if (optionPlayer === optionBot) {
-            setWinner(`Draw on the round ${round-1}`)
+            setWinner(`DRAW ON THE ROUND ${round - 1}`)
         }
 
         else if (optionPlayer.defeatedBy.includes(optionBot.id)) {
-            setWinner(`Bot Wins the round ${round-1}`)
+            setWinner(`BOT WINS THE ROUND ${round - 1}`)
             setScoreBot(scoreBot + 1)
 
         }
 
         else if (optionBot.defeatedBy.includes(optionPlayer.id)) {
-            setWinner(`Player Wins the round ${round-1}`)
+            setWinner(`YOU WIN THE ROUND ${round - 1}`)
             setScorePlayer(scorePlayer + 1)
         }
+    }
+    const getGameWinner = () => {
+        if (scoreBot > scorePlayer) {
+            return "THE BOT WINS THE GAME :("
+        } else if (scorePlayer > scoreBot) {
+            return "YOU WIN THE GAME:)"
+        } else {
+            return "DRAW :|"
+        }
+
     }
 
     return (
         <div className="game-container">
             <div className="button-container d-grid gap-2">
-                <Button size="lg" variant="danger" onClick={goToHome}> Go to home </Button>
-                <Button size="lg" variant="danger" onClick={resetGame}> Reset Game </Button>
+                <Button size="lg" variant="outline-dark" onClick={goToHome}> GO TO HOME </Button>
+                <Button size="lg" variant="outline-dark" onClick={resetGame}> RESET GAME </Button>
             </div>
 
             <div className="game-result">
-                {gameStarted ? winner : "Select max rounds and then choose your option"}
-                {round === maxRounds + 1 && <p>Finished game</p>}
-
-            </div>
-            <div className="round">
-
-                {maxRounds && round !== maxRounds + 1 && <p>Round: {round}</p>}
-                 {round === 1 ? <label>Max Rounds: <input type="number" min={1} max={10} value={maxRounds} onChange={(e) => {
-                    const maxRounds = parseInt(e.target.value)
-                    if (maxRounds && e.target.validity.valid) {
-                        setMaxRounds(maxRounds)
-                    }
-                    e.preventDefault()
-                }} /> </label>
-                    : <p>Max Rounds: {maxRounds} </p>} 
+                <div className="game-result-item">
+                    {gameStarted ? winner : "SELECT MAX ROUNDS AND THEN CHOOSE YOUR OPTIONS: "}
+                    {round === maxRounds + 1 && <p>{getGameWinner()}</p>}
+                </div>
             </div>
 
+            <div className="info-container">
+            <div className="round-container">
+                <div className="round">
 
+                    {maxRounds && round !== maxRounds + 1 && <p>ACTUAL ROUND: {round}</p>}
+                    {round === 1 ? <label>MAX ROUNDS: <input type="number" min={1} max={10} value={maxRounds} onChange={(e) => {
+                        const maxRounds = parseInt(e.target.value)
+                        if (maxRounds && e.target.validity.valid) {
+                            setMaxRounds(maxRounds)
+                        }
+                        e.preventDefault()
+                    }} /> </label>
+                        : <p>MAX ROUNDS: {maxRounds} </p>}
+                </div>
+            </div>
             <div className="players-score">
                 <div className="player-container">
-                    <div className="player-title">Player</div>
+                    <div className="player-title">PLAYER</div>
                     {optionPlayer?.id &&
                         <img height="100px" width="100px'" alt="option" src={optionPlayer?.image} />
                     }
-                    <p>Score: {scorePlayer}</p>
+                    <p>SCORE: {scorePlayer}</p>
                 </div>
                 <div className="bot-container">
-                    <div className="bot-title">Bot</div>
+                    <div className="bot-title">BOT</div>
                     {optionBot?.id &&
                         <img height="100px" width="100px" alt="option" src={optionBot?.image} />
                     }
 
-                    <p> Score: {scoreBot}</p>
+                    <p>SCORE: {scoreBot}</p>
 
                 </div>
+            </div>
             </div>
 
             <div className="game-options">
@@ -151,6 +165,7 @@ const Game = () => {
                             key={index}
                             choose={chooseOption}
                             value={option}
+                            active={optionPlayer && option.id === optionPlayer.id}
                         />
                     )
                 }

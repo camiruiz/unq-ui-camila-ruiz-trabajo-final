@@ -11,8 +11,8 @@ const Guide = () => {
 
     return (
         <div className="home-container d-grid gap-2">
-            <Button size="lg" variant="danger" onClick={goToPlay}> Play </Button>
-            <Button size="lg" variant="danger" onClick={goToHowToPlay}> How to play </Button>
+            <Button size="lg" variant="outline-dark" onClick={goToPlay}> PLAY </Button>
+            <Button size="lg" variant="outline-dark" onClick={goToHowToPlay}> HOW TO PLAY </Button>
         </div>
 
     )

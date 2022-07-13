@@ -11,11 +11,12 @@ const Home = () => {
             <div className="content-container">
                 <Title />
                 <div className="image">
-                    <img src={"/images/gif.gif"} />
+                    <img src={"/images/gif.gif"} className="image-circle" />
                 </div>
                 <Guide />
+
                 <div className="image">
-                    <img src={"/images/picHome.jpg"} />
+                    <img src={"/images/picHome.jpg"} className="image-circle" />
                 </div>
             </div>
         </div>
