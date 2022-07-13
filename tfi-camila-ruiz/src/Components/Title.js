@@ -4,9 +4,9 @@ import '../Styles/Title.css';
 const Title = () => {
 
     return (
-        <div className='title-container'>
+        <div className="home-container">
 
-             <div className='titleStyle'>
+             <div className="title-style">
                 <h1> Rock, Paper, Scissors, Lizard o Spock</h1>
             </div>
         </div>

@@ -10,7 +10,7 @@ const Guide = () => {
     const goToHowToPlay = () => navigate('/Rules')
 
     return (
-        <div className="title-container d-grid gap-2">
+        <div className="home-container d-grid gap-2">
             <Button size="lg" variant="danger" onClick={goToPlay}> Play </Button>
             <Button size="lg" variant="danger" onClick={goToHowToPlay}> How to play </Button>
         </div>

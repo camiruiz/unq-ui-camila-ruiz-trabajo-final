@@ -3,10 +3,10 @@
     padding: 2rem 0 2rem 0;
 }
 
-.imageGif {
+.image-gif {
     align-content: center;
     background-color: rgb(252, 245, 245);
-    width: 27%;
+    width: 30%;
     height: 46%;
     margin-top: 10px;
     border: 2px solid black;
@@ -14,8 +14,8 @@
     display:block
 }
 
-.imageContainer {
+.image-container {
     height: auto;
     width: auto;
-    transform: scale(0.7, 0.7);
+    transform: scale(0.9, 0.9);
 }
