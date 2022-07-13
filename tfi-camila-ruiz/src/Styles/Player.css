@@ -1,33 +1,30 @@
-.scorePlayer {
+.game-result {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
 }
 
-.player-title {
+.players-score {
     display: flex;
-    justify-content: left;
-    align-items: left;
-     flex-direction: column;
-}
-
-.bot-title {
-    display: flex;
-    justify-content: right;
-    align-items: right;
-     flex-direction: column;
-
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .player-container {
     display: flex;
-    flex-direction: row;
- vertical-align: center;    
-   }
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 1rem 3rem;
+}
 
 .bot-container {
     display: flex;
-    flex-direction: row;
-    vertical-align: center;    
-   }
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 1rem 3rem;
+}

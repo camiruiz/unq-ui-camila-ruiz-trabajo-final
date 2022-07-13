@@ -8,15 +8,17 @@ import '../Styles/Images.css'
 const Home = () => {
     return (
         <div className='GameContainer'>
-            <Title/>    
-        <div className= 'image'>
-            <img src={"/images/gif.gif"}/>
-        </div> 
-             <Guide/>  
-          <div className= 'image'>
-          <img src={"/images/picHome.jpg"}/>
-      </div> 
-      </div>
+            <div className='content-container'>
+                <Title />
+                <div className='image'>
+                    <img src={"/images/gif.gif"} />
+                </div>
+                <Guide />
+                <div className='image'>
+                    <img src={"/images/picHome.jpg"} />
+                </div>
+            </div>
+        </div>
 
     )
 }
