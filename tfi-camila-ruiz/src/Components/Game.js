@@ -99,9 +99,8 @@ const Game = () => {
         } else if (scorePlayer > scoreBot) {
             return "YOU WIN THE GAME :)"
         } else {
-            return "IT'S A DRAW! :/"
+            return "IT'S A DRAW IN THE GAME! :/"
         }
-
     }
 
     return (

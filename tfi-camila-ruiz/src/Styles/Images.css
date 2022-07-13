@@ -17,7 +17,7 @@
 .image-container {
     height: auto;
     width: auto;
-    transform: scale(0.9, 0.9);
+    transform: scale(1.0, 1.0);
 }
 
 .image-circle {
