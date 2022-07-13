@@ -102,15 +102,16 @@ const Game = () => {
         if (scoreBot > scorePlayer) {
             return "THE BOT WINS THE GAME :("
         } else if (scorePlayer > scoreBot) {
-            return "YOU WIN THE GAME:)"
+            return "YOU WIN THE GAME :)"
         } else {
-            return "DRAW :|"
+            return "IT'S A DRAW! :/"
         }
 
     }
 
     return (
         <div className="game-container">
+        <div className="content-container">
             <div className="button-container d-grid gap-2">
                 <Button size="lg" variant="outline-dark" onClick={goToHome}> GO TO HOME </Button>
                 <Button size="lg" variant="outline-dark" onClick={resetGame}> RESET GAME </Button>
@@ -170,7 +171,7 @@ const Game = () => {
                     )
                 }
             </div>
-
+            </div>
         </div>
     )
 }
