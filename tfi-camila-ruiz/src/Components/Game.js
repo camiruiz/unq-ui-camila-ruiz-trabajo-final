@@ -32,7 +32,6 @@ const options = [{
 }
 ]
 
-
 const Game = () => {
 
     const [optionPlayer, setOptionPlayer] = useState();
@@ -63,7 +62,6 @@ const Game = () => {
     }
 
     const chooseOption = (option) => {
-
         if (!maxRounds || round === maxRounds + 1)
             return;
 
@@ -94,6 +92,7 @@ const Game = () => {
             setScorePlayer(scorePlayer + 1)
         }
     }
+
     const getGameWinner = () => {
         if (scoreBot > scorePlayer) {
             return "THE BOT WINS THE GAME :("

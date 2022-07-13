@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
-import '../Styles/Title.css';
+import '../Styles/Home.css';
 
 
 const Rules = () => {

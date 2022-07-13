@@ -1,11 +1,11 @@
 import React from "react";
-import '../Styles/Title.css';
+import '../Styles/Home.css';
 import '../Styles/App.css'
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 const Guide = () => {
-    
+
     const navigate = useNavigate()
     const goToPlay = () => navigate('/Game')
     const goToHowToPlay = () => navigate('/Rules')
