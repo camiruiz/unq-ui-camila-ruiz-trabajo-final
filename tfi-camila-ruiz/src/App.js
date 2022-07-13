@@ -5,9 +5,6 @@ import Game from './Components/Game';
 import Rules from './Components/Rules';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-
-
- 
 function App() {
 
     return (

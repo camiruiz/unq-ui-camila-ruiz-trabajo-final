@@ -4,8 +4,6 @@ import Option from './Option';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
-
-
 const options = [{
     id: "rock",
     defeatedBy: ["paper", "spock"],
@@ -62,7 +60,6 @@ const Game = () => {
         setOptionPlayer(null)
         setOptionBot(null)
         setGameStarted(false)
-
     }
 
     const chooseOption = (option) => {
@@ -74,7 +71,6 @@ const Game = () => {
         setOptionPlayer(option);
         chooseOptionBot();
         setRound(round + 1)
-
     }
 
     const chooseOptionBot = () => {
@@ -116,18 +112,15 @@ const Game = () => {
                 <Button size="lg" variant="outline-dark" onClick={goToHome}> GO TO HOME </Button>
                 <Button size="lg" variant="outline-dark" onClick={resetGame}> RESET GAME </Button>
             </div>
-
             <div className="game-result">
                 <div className="game-result-item">
                     {gameStarted ? winner : "SELECT MAX ROUNDS AND THEN CHOOSE YOUR OPTIONS: "}
                     {round === maxRounds + 1 && <p>{getGameWinner()}</p>}
                 </div>
             </div>
-
             <div className="info-container">
             <div className="round-container">
                 <div className="round">
-
                     {maxRounds && round !== maxRounds + 1 && <p>ACTUAL ROUND: {round}</p>}
                     {round === 1 ? <label>MAX ROUNDS: <input type="number" min={1} max={10} value={maxRounds} onChange={(e) => {
                         const maxRounds = parseInt(e.target.value)
@@ -152,13 +145,10 @@ const Game = () => {
                     {optionBot?.id &&
                         <img height="100px" width="100px" alt="option" src={optionBot?.image} />
                     }
-
                     <p>SCORE: {scoreBot}</p>
-
                 </div>
             </div>
             </div>
-
             <div className="game-options">
                 {
                     options.map((option, index) =>

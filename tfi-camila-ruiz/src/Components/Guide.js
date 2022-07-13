@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 const Guide = () => {
+    
     const navigate = useNavigate()
     const goToPlay = () => navigate('/Game')
     const goToHowToPlay = () => navigate('/Rules')
@@ -14,7 +15,6 @@ const Guide = () => {
             <Button size="lg" variant="outline-dark" onClick={goToPlay}> PLAY </Button>
             <Button size="lg" variant="outline-dark" onClick={goToHowToPlay}> HOW TO PLAY </Button>
         </div>
-
     )
 }
 

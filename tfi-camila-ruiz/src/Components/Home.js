@@ -6,6 +6,7 @@ import '../Styles/Images.css'
 
 
 const Home = () => {
+
     return (
         <div className="game-container">
             <div className="content-container">
@@ -14,13 +15,11 @@ const Home = () => {
                     <img src={"/images/gif.gif"} className="image-circle" />
                 </div>
                 <Guide />
-
                 <div className="image">
                     <img src={"/images/picHome.jpg"} className="image-circle" />
                 </div>
             </div>
         </div>
-
     )
 }
 export default Home;
