@@ -1,14 +1,12 @@
 import React from 'react';
 import '../Styles/Home.css';
 
-const Title = () => {
+const Title = ({title}) => {
 
     return (
-        <div className="home-container">
-             <div className="title-style">
-                <h1> Rock, Paper, Scissors, Lizard o Spock</h1>
+            <div className="title-style">
+                <h1> {title} </h1>
             </div>
-        </div>
     )
 }
 

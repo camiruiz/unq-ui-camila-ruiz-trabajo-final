@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import '../Styles/Game.css';
-import Option from './Option';
 import { useNavigate } from 'react-router-dom';
+import Option from './Option';
 import Button from 'react-bootstrap/Button';
+import '../Styles/Game.css';
+import PlayerScore from './PlayerScore';
+import Round from './Round';
+
 
 const options = [{
     id: "rock",
@@ -82,22 +85,22 @@ const Game = () => {
         }
 
         else if (optionPlayer.defeatedBy.includes(optionBot.id)) {
-            setWinner(`BOT WINS THE ROUND ${round - 1}`)
+            setWinner(`BOT WINS ROUND ${round - 1}`)
             setScoreBot(scoreBot + 1)
 
         }
 
         else if (optionBot.defeatedBy.includes(optionPlayer.id)) {
-            setWinner(`YOU WIN THE ROUND ${round - 1}`)
+            setWinner(`YOU WIN ROUND ${round - 1}`)
             setScorePlayer(scorePlayer + 1)
         }
     }
 
     const getGameWinner = () => {
         if (scoreBot > scorePlayer) {
-            return "THE BOT WINS THE GAME :("
+            return "THE BOT WON THE GAME :("
         } else if (scorePlayer > scoreBot) {
-            return "YOU WIN THE GAME :)"
+            return "YOU WON THE GAME :)"
         } else {
             return "IT'S A DRAW IN THE GAME! :/"
         }
@@ -105,60 +108,51 @@ const Game = () => {
 
     return (
         <div className="game-container">
-        <div className="content-container">
-            <div className="button-container d-grid gap-2">
-                <Button size="lg" variant="outline-dark" onClick={goToHome}> GO TO HOME </Button>
-                <Button size="lg" variant="outline-dark" onClick={resetGame}> RESET GAME </Button>
-            </div>
-            <div className="game-result">
-                <div className="game-result-item">
-                    {gameStarted ? winner : "SELECT MAX ROUNDS AND THEN CHOOSE YOUR OPTIONS: "}
-                    {round === maxRounds + 1 && <p>{getGameWinner()}</p>}
+            <div className="content-container">
+                <div className="button-container d-grid gap-2">
+                    <Button size="lg" variant="outline-dark" onClick={goToHome}> GO TO HOME </Button>
+                    <Button size="lg" variant="outline-dark" onClick={resetGame}> RESET GAME </Button>
                 </div>
-            </div>
-            <div className="info-container">
-            <div className="round-container">
-                <div className="round">
-                    {maxRounds && round !== maxRounds + 1 && <p>ACTUAL ROUND: {round}</p>}
-                    {round === 1 ? <label>MAX ROUNDS: <input type="number" min={1} max={10} value={maxRounds} onChange={(e) => {
-                        const maxRounds = parseInt(e.target.value)
-                        if (maxRounds && e.target.validity.valid) {
-                            setMaxRounds(maxRounds)
-                        }
-                        e.preventDefault()
-                    }} /> </label>
-                        : <p>MAX ROUNDS: {maxRounds} </p>}
+                <div className="game-result">
+                    <div className="game-result-item">
+                        {gameStarted ? winner : "SELECT MAX ROUNDS AND PLAY! "}
+                        {round === maxRounds + 1 && <p>{getGameWinner()}</p>}
+                    </div>
                 </div>
-            </div>
-            <div className="players-score">
-                <div className="player-container">
-                    <div className="player-title">PLAYER</div>
-                    {optionPlayer?.id &&
-                        <img height="100px" width="100px'" alt="option" src={optionPlayer?.image} />
-                    }
-                    <p>SCORE: {scorePlayer}</p>
-                </div>
-                <div className="bot-container">
-                    <div className="bot-title">BOT</div>
-                    {optionBot?.id &&
-                        <img height="100px" width="100px" alt="option" src={optionBot?.image} />
-                    }
-                    <p>SCORE: {scoreBot}</p>
-                </div>
-            </div>
-            </div>
-            <div className="game-options">
-                {
-                    options.map((option, index) =>
-                        <Option
-                            key={index}
-                            choose={chooseOption}
-                            value={option}
-                            active={optionPlayer && option.id === optionPlayer.id}
+                <div className="info-container">
+                    <Round 
+                        round={round} 
+                        maxRounds={maxRounds}
+                        setMaxRounds={setMaxRounds}
+                    />
+
+                    <div className="players-score">
+                        <PlayerScore
+                            title="PLAYER"
+                            className="player-container"
+                            score={scorePlayer}
+                            optionPlayer={optionPlayer}
                         />
-                    )
-                }
-            </div>
+                        <PlayerScore
+                            title="BOT"
+                            className="bot-container"
+                            score={scoreBot}
+                            optionPlayer={optionBot}
+                        />
+                    </div>
+                </div>
+                <div className="game-options">
+                    {
+                        options.map((option, index) =>
+                            <Option
+                                key={index}
+                                choose={chooseOption}
+                                value={option}
+                                active={optionPlayer && option.id === optionPlayer.id}
+                            />
+                        )
+                    }
+                </div>
             </div>
         </div>
     )

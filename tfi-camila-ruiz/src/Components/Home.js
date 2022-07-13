@@ -10,16 +10,25 @@ const Home = () => {
     return (
         <div className="game-container">
             <div className="content-container">
-                <Title />
+                
+                <div className="home-container">
+                    <Title
+                        title="ROCK, PAPER, SCISSORS, LIZARD OR SPOCK"
+                    />
+                </div>
+
                 <div className="image">
                     <img src={"/images/gif.gif"} className="image-circle" />
                 </div>
+
                 <Guide />
+                
                 <div className="image">
-                    <img src={"/images/picHome.jpg"} className="image-circle" />
+                    <img src={"/images/line.png"} className="image-circle" />
                 </div>
             </div>
         </div>
     )
 }
+
 export default Home;
