@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div className="game-container">
             <div className="content-container">
-                
+                    
                 <div className="home-container">
                     <Title
                         title="ROCK, PAPER, SCISSORS, LIZARD OR SPOCK"
@@ -22,7 +22,7 @@ const Home = () => {
                 </div>
 
                 <Guide />
-                
+
                 <div className="image">
                     <img src={"/images/line.png"} className="image-circle" />
                 </div>

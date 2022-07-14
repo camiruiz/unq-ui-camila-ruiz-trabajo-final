@@ -109,6 +109,7 @@ const Game = () => {
     return (
         <div className="game-container">
             <div className="content-container">
+
                 <div className="button-container d-grid gap-2">
                     <Button size="lg" variant="outline-dark" onClick={goToHome}> GO TO HOME </Button>
                     <Button size="lg" variant="outline-dark" onClick={resetGame}> RESET GAME </Button>
