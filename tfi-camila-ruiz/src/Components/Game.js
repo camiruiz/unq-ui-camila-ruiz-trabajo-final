@@ -121,8 +121,8 @@ const Game = () => {
                     </div>
                 </div>
                 <div className="info-container">
-                    <Round 
-                        round={round} 
+                    <Round
+                        round={round}
                         maxRounds={maxRounds}
                         setMaxRounds={setMaxRounds}
                     />
