@@ -37,9 +37,9 @@ npm start
 
 http://localhost:3000/
 
-# Getting Started with Create React App
+#### Que se divierta jugando Rock, Paper, Scissors, Lizard or Spock!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 
 ## Available Scripts
